@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#173e42" />
+    <title>Chapter & Charm — Tambola</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=DM+Sans:wght@400;500;700&family=Great+Vibes&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="paper">
+        <div class="botanical top-leaves">✦ &nbsp; ❦ &nbsp; ✦</div>
+        <header>
+          <p class="eyebrow">An evening of numbers, notes & nostalgia</p>
+          <h1>Chapter <span>&amp;</span> Charm</h1>
+          <p class="subtitle">Tambola Soirée</p>
+          <div class="ornament">⌁ &nbsp; ♥ &nbsp; ⌁</div>
+        </header>
+
+        <section class="lobby" id="lobby">
+          <div class="lobby-copy">
+            <p class="section-kicker">Welcome, reader</p>
+            <h2>Gather your book club around the table.</h2>
+            <p>Make a private Tambola room, send the link, and let every guest play from their own phone.</p>
+          </div>
+          <div class="lobby-actions">
+            <label for="playerName">Your name</label>
+            <input id="playerName" maxlength="22" placeholder="e.g. Lipika" />
+            <button class="primary" id="enterRoom">Enter the soirée <span>→</span></button>
+            <p class="tiny-note">Your ticket will be unique to you.</p>
+          </div>
+        </section>
+
+        <section class="game hidden" id="game">
+          <div class="room-bar">
+            <div><p class="section-kicker">The reading room</p><strong id="roomName">Chapter &amp; Charm</strong></div>
+            <button class="share-button" id="shareRoom">↗&nbsp; Invite friends</button>
+          </div>
+
+          <div class="called-card">
+            <div class="calling-label">The number being read</div>
+            <div class="called-number" id="calledNumber">—</div>
+            <p id="calledPhrase">The story is about to begin.</p>
+            <button class="draw-button" id="drawNumber">Draw a number <span>✦</span></button>
+          </div>
+
+          <section class="ticket-section">
+            <div class="ticket-heading"><div><p class="section-kicker">Your bookmark</p><h2 id="ticketOwner">Your Tambola ticket</h2></div><span id="markedCount">0 / 15 marked</span></div>
+            <div class="ticket" id="ticket" aria-label="Your Tambola ticket"></div>
+            <p class="ticket-tip">Tap a number after it has been called to mark it with a rose seal.</p>
+          </section>
+
+          <section class="claims">
+            <p class="section-kicker">Call your prize</p>
+            <div class="claim-grid">
+              <button data-claim="Early Five">Early Five <small>5 marks</small></button>
+              <button data-claim="Top Line">Top Line <small>row complete</small></button>
+              <button data-claim="Middle Line">Middle Line <small>row complete</small></button>
+              <button data-claim="Bottom Line">Bottom Line <small>row complete</small></button>
+              <button class="full-house" data-claim="Full House">♥ Full House <small>15 marks</small></button>
+            </div>
+          </section>
+
+          <details class="history"><summary>Numbers already read <span id="historyCount">0</span></summary><div id="historyList"></div></details>
+        </section>
+        <footer>“A reader lives a thousand lives…” <span>♥</span></footer>
+      </section>
+    </main>
+    <div id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
